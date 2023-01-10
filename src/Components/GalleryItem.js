@@ -1,5 +1,6 @@
 import { useState } from "react"
 
+
 function GalleryItem({ item }) {
       const [view, setView] = useState(false)
 
@@ -20,8 +21,6 @@ function GalleryItem({ item }) {
         'backgroundSize': 'cover',
         'color': 'yellow'
     }
-    
- 
     
     const simpleView = () => {
         return (
