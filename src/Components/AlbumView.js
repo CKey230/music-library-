@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+
 
 function AlbumView() {
     const { id } = useParams()
-    const [ albumData, setAlbumData ] = useState ([])
+    const [ albumData, setAlbumData ] = useState([])
+
     const songDisplay = albumData.map(song => {
-        return(
+        return (
             <div key={song.trackId}>
                 <p>{song.trackName}</p>
             </div>
@@ -13,24 +15,24 @@ function AlbumView() {
     })
 
     useEffect(() => {
-        const API_URL = `http://localhost:4000/album/${id}`
+        const API_URL = `http://localhost:4000/song/${id}`
         const fetchData = async () => {
             const response = await fetch(API_URL)
             const resData = await response.json()
             console.log(resData)
-            const songs  = resData.results.filter(entry => entry.wrapperType === 'track')
-            setArtistData(albums)
+            const songs = resData.results.filter(entry => entry.wrapperType === 'track')
+            setAlbumData(songs)
         }
         fetchData()
     }, [id])
 
-
-    return ( 
+    return (
         <div>
-            <h2>The Id passed was: {id} </h2>
-            <p>Album Data goes Here!</p>
+            {songDisplay}
         </div>
     )
 }
 
 export default AlbumView
+
+
