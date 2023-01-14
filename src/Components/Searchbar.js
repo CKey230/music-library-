@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function Searchbar({ handleSearch }) {
+function SearchBar({ handleSearch }) {
     const [searchTerm, setSearchTerm] = useState('')
 
     return (
@@ -11,4 +11,4 @@ function Searchbar({ handleSearch }) {
     )
 }
 
-export default Searchbar
+export default SearchBar
