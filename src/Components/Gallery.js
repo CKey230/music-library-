@@ -6,12 +6,12 @@ const Gallery = () => {
     const data = useContext(DataContext)
     const myData = data.result.read()
 
-    const display = data.map((item, i) => {
+    const display = myData.map((item, i) => {
         return(
             <GalleryItem key={i} item={item} />
         )
     })
-
+    
     return (
         <div>
             {display}

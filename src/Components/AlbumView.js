@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import Spinner from './Spinner'
 
 
 function AlbumView() {
@@ -26,12 +27,15 @@ function AlbumView() {
         fetchData()
     }, [id])
 
+
     return (
         <div>
+            {albumData.length > 0 ? <h2>{albumData[0].collectionName}</h2> : <Spinner />}
             {songDisplay}
         </div>
     )
 }
+
 
 export default AlbumView
 
