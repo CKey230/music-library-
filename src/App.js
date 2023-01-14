@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React, { Fragment } from 'react';
 import Searchbar from './Components/Searchbar';
 import Gallery from './Components/Gallery';
+import { DataContext } from './Context/DataContext';
 import AlbumView from './Components/AlbumView';
 import ArtistView from './Components/ArtistView';
 

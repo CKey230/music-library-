@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 
+
 function GalleryItem({ item }) {
       const [view, setView] = useState(false)
 
@@ -21,8 +22,6 @@ function GalleryItem({ item }) {
         'backgroundSize': 'cover',
         'color': 'yellow'
     }
-    
- 
     
     const simpleView = () => {
         return (
